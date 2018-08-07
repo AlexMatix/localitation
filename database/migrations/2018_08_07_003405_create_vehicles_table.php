@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTrackersTable extends Migration
+class CreateVehiclesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateTrackersTable extends Migration
      */
     public function up()
     {
-        Schema::create('trackers', function (Blueprint $table) {
+        Schema::create('vehicles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string("Imei",20);
-            $table->string("Marca", 50);
-            $table->string("Modelo", 50);
-            $table->string("Gmt", 20);
-            $table->unsignedTinyInteger("Estado", 20);
+            $table->string("Marca");
+            $table->string("Modelo");
+            $table->string("Placa");
+            $table->string("Alias");
+            $table->unsignedTinyInteger("Estado");
         });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -29,6 +30,6 @@ class CreateTrackersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trackers');
+        Schema::dropIfExists('vehicles');
     }
 }
