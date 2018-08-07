@@ -22,7 +22,7 @@ class CreateCustumersTable extends Migration
             $table->unsignedTinyInteger("Estado");
         });
     }
-
+    //CAMBIOOS MINIMOS
     /**
      * Reverse the migrations.
      *
